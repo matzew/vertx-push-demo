@@ -16,7 +16,7 @@
  */
 var app = {
     createStompClient: function() {
-        var url = "http://192.168.0.108:8080/eventbus";
+        var url = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + '/eventbus';
 		eb = new vertx.EventBus(url); // does a connect;
 		
         eb.onopen = function() {
